@@ -1,0 +1,16 @@
+header{
+    grid-area: header;
+    background: blanchedalmond;
+    }
+    .header{
+        display: flex;
+        justify-content: space-around;
+          }
+    .span{
+      margin-top: 40px;
+    }
+     span{
+    margin-left: 30px;
+    
+    }
+    

@@ -1,0 +1,12 @@
+.product{
+    text-align: center;
+  
+}
+.product-item{
+    margin: 20px;
+}
+section{
+display: flex;
+flex-wrap:wrap;
+}
+
