@@ -1,0 +1,19 @@
+
+.itemProduct{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid teal;
+    width: 250px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    background: cornsilk;
+}
+.img{
+    width: 250px;
+    height: 200px;
+}
+
+.price::before{
+    content: "\0020BD";
+}
