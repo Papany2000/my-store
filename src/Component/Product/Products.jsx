@@ -6,7 +6,7 @@ import style from './Products.module.css'
 
 const Products = function(props){
 
-  let itemProductElement = props.goods.map((elem, index) =>  <Itemproduct key = {index} name = {elem.name}  price = {elem.price} src = {elem.image}/>)
+  let itemProductElement = props.goods.map((elem, index) =>  <Itemproduct key = {index} name = {elem.name}  price = {elem.price} src = {elem.image} createTocart = {props.createTocart} />)
 
 return <div>
         <div className = {style.product}>

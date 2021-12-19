@@ -15,7 +15,7 @@ return ( <div className={style.itemProduct}>
                     <div className = {style.productItemInfo}>
                         <p>{props.name} </p>
                         <p className={style.price}>{props.price}</p>
-                        <Button children={'добавить в корзину'}/>
+                        <Button onClick = {() => props.createTocart({id: props.id, price: props.price, name: props.name, image: props.src})} children={'добавить в корзину'}/>
                      </div>
                 
           </div>  

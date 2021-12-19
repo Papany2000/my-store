@@ -15,8 +15,10 @@ function App() {
     {id: 4, name: 'Яблоки', price: 400, image: 'https://kartinkin.net/uploads/posts/2021-07/thumbs/1626217214_28-kartinkin-com-p-marinovannie-ovoshchi-yeda-krasivo-foto-33.jpg'},
    
   ])
-  
-
+  const [cartGoods, setCartGoods] = useState([])
+  const createTocart = (newItem) =>{
+    setCartGoods(cartGoods.concat([newItem]))
+   }
 
 
   return (
@@ -25,8 +27,8 @@ function App() {
        <Router>
       <Header/>
         <Routes>
-     <Route path = "/Products" element = {<Products goods = {goods}/>} /> 
-     <Route path = "/Carts" element = {<Carts/>} /> 
+     <Route path = "/Products" element = {<Products goods = {goods} createTocart = {createTocart}/>} /> 
+     <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods}/>} /> 
      </Routes>
      </Router>
     </div>
