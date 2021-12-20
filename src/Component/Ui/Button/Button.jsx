@@ -4,7 +4,7 @@ import React  from "react";
 const Button  = ({children, ...props}) => {
     
     return (
-       <button {...props} className = {style.Btn}>  {/*children из Аpp в пропс а в компоненте из пропсов деструктуризацией {}*/}
+       <button {...props} className = {style.Btn}>  {/*children из Компанента в пропс а в Button из пропсов ...props {}*/}
            {children}
        </button>
       );

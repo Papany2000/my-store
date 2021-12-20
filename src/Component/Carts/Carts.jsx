@@ -8,7 +8,7 @@ import Itemproduct from '../ItemProduct/ItemProduct'
 const Carts = function(props){
 
    
-    let cartItems = props.cartGoods.map((elem, index) =>  <Itemproduct key = {index} name = {elem.name}  price = {elem.price} src = {elem.image} createTocart = {props.createTocart} />)
+    let cartItems = props.cartGoods.map((elem, index) =>  <Itemproduct key = {index} name = {elem.name}  price = {elem.price} src = {elem.image} createTocart = {props.createTocart} removenewItem = {props.removenewItem} children = {'удалить'} />)
     
 return <div>
 
@@ -18,6 +18,7 @@ return <div>
             <Button  children={'оформить покупку'}/>
             <section>
            {cartItems}
+        
             </section>
     </div> 
  
