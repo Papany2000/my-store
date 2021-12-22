@@ -19,8 +19,9 @@ function App() {
   const createTocart = (newItem) =>{
     setCartGoods([...cartGoods, newItem])
    }
-   const removenewItem = (newItem) =>{
-    cartGoods(newItem.filter(elem => elem.id !== newItem.id))
+   const removeTocart = (newItem) =>{
+     console.log( newItem)
+    setCartGoods(cartGoods.filter(elem => elem.id !== newItem.id))
   }
 
   return (
@@ -30,7 +31,7 @@ function App() {
       <Header/>
         <Routes>
      <Route path = "/Products" element = {<Products goods = {goods} createTocart = {createTocart}/>} /> 
-     <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} />} removenewItem = {removenewItem} /> 
+     <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} removeTocart = {removeTocart} />} /> 
      </Routes>
      </Router>
     </div>

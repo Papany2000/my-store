@@ -6,13 +6,13 @@ import style from './Products.module.css'
 
 const Products = function(props){
 
-  let itemProductElement = props.goods.map((elem, index) =>  <Itemproduct key = {index} id = {elem.id} name = {elem.name}  price = {elem.price} src = {elem.image}  children = {'добавить в корзину'} createTocart = {props.createTocart} />)
-  let onClick = () => props.createTocart({id: props.id, price: props.price, name: props.name, image: props.src})
+  let ProductItemElement = props.goods.map((elem, index) =>  <Itemproduct key = {index} id = {elem.id} name = {elem.name}  price = {elem.price} src = {elem.image}  children = {'добавить в корзину'} onClickFunc = {props.createTocart} />)
+
 return <div>
         <div className = {style.product}>
             <h2>Лучшие товары из магазина "У бабы Маши".</h2>
             <section>
-                     {itemProductElement}
+                     {ProductItemElement}
             </section>
         </div> 
 </div>

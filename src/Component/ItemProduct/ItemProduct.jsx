@@ -6,6 +6,7 @@ import style from './ItemProduct.module.css'
 const Itemproduct = function(props){
 
 
+let newItem = {id: props.id, price: props.price, name: props.name, image: props.src, count: props.count} 
 
 return ( <div className={style.itemProduct}>
                 
@@ -14,8 +15,8 @@ return ( <div className={style.itemProduct}>
                     </div>
                     <div className = {style.productItemInfo}>
                         <p>{props.name} </p>
-                        <p className={style.price}>{props.price}</p>
-                        <Button onClick = {() => props.createTocart({id: props.id, price: props.price, name: props.name, image: props.src})}  children={props.children} />
+                        <p className={style.price}>{props.price} * {props.count}</p>
+                        <Button  onClick = {() => props.onClickFunc(newItem)}  children={props.children}/>
                      </div>
                 
           </div>  
