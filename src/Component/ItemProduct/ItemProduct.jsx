@@ -2,7 +2,6 @@ import React from 'react'
 import Button from '../Ui/Button/Button'
 import style from './ItemProduct.module.css'
 
-
 const Itemproduct = function(props){
 
 
@@ -15,8 +14,9 @@ return ( <div className={style.itemProduct}>
                     </div>
                     <div className = {style.productItemInfo}>
                         <p>{props.name} </p>
-                        <p className={style.price}>{props.price} * {props.count}</p>
+                       {props.isCount ? <p className={style.price}>{props.price} * {props.count}</p> : <p className={style.price}>{props.price}</p>}
                         <Button  onClick = {() => props.onClickFunc(newItem)}  children={props.children}/>
+                        
                      </div>
                 
           </div>  

@@ -9,7 +9,7 @@ const Carts = function(props){
 
   
 
-    let cartItemElement = props.cartGoods.map((elem) =>  <Itemproduct key = {elem.id}  id = {elem.id} name = {elem.name}  price = {elem.price} src = {elem.image}  onClickFunc = {props.removeTocart} children = {'удалить'} />)
+    let cartItemElement = props.cartGoods.map((elem) =>  <Itemproduct key = {elem.id} isCount = {true} count = {elem.count}  id = {elem.id} name = {elem.name}  price = {elem.price} src = {elem.image}  onClickFunc = {props.removeTocart} children = {'удалить'} />)
     
 return <div>
 
