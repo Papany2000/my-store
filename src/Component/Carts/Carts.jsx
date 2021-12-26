@@ -15,7 +15,8 @@ return <div>
 
         <div className = {style.carts}>
             <h2>Корзина.</h2>
-            <Button  children={'очистить корзину'}/>
+            
+            <Button   onClick = {() => props.cartClear()} children={'очистить корзину'}/>
             <Button  children={'оформить покупку'}/>
             <section>
            {cartItemElement}

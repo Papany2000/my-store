@@ -23,6 +23,7 @@ function App() {
   const removeTocart = (newItem) =>{
    if (newItem.count > 1) { setCartGoods([...cartGoods.map(el => el.id === newItem.id ? {...el, count: el.count - 1} : el)])} else {setCartGoods(cartGoods.filter(el => el.id !== newItem.id))}
  }
+ const cartClear = (newItem) => setCartGoods([])
   return (
     
     <div className="App">
@@ -30,7 +31,7 @@ function App() {
       <Header/>
         <Routes>
      <Route path = "/Products" element = {<Products goods = {goods} createTocart = {createTocart}/>} /> 
-     <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} removeTocart = {removeTocart} />} /> 
+     <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} removeTocart = {removeTocart} cartClear = {cartClear} />} /> 
      </Routes>
      </Router>
     </div>
