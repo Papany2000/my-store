@@ -1,6 +1,29 @@
+.cart{
+    background: lightcyan;
+}
+
 section{
     display: flex;
     flex-wrap:wrap;
     }
-   
+    h2{
+        text-align: center;
+    }
+ .checkout{
+     margin-bottom: 20px;
+     text-align: center;
+     background:rgb(241, 238, 203);
+ } 
+ .check{
+        width: 200px;
+        border-radius: 10px;
+        border: 2px solid red;
+        background: lightblue;
+    }
+    .zuruck{
+        width: 200px;
+        border-radius: 10px;
+        border: 2px solid teal;
+        background: lightblue;
+    }
 

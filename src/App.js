@@ -19,11 +19,28 @@ function App() {
   const createTocart = (newItem) =>{
     const isexsist = cartGoods.filter(elem => elem.id === newItem.id)
     !isexsist[0] ? setCartGoods([...cartGoods, {...newItem, count: 1}]) :  setCartGoods([...cartGoods.map(el => el.id === newItem.id ? {...el, count: el.count + 1} : el)])
+    
   }
   const removeTocart = (newItem) =>{
    if (newItem.count > 1) { setCartGoods([...cartGoods.map(el => el.id === newItem.id ? {...el, count: el.count - 1} : el)])} else {setCartGoods(cartGoods.filter(el => el.id !== newItem.id))}
  }
- const cartClear = (newItem) => setCartGoods([])
+ const cartClear = () => setCartGoods([])
+
+ const [style, setStyle] = useState([{display: 'none'}])
+ let visible = () => {
+   setStyle([{display: 'block'}])
+  } 
+  let inVisible = () => {
+    setStyle([{display: 'none'}])
+   } 
+  const [sum, setSum] = useState([{price: 0}])
+  let check = () => { 
+    let total = {price: cartGoods.reduce((total, el) => total  + el.price * el.count, 0)}
+   setSum(sum.map(el => el.price = total ))
+}
+  
+  
+
   return (
     
     <div className="App">
@@ -31,7 +48,7 @@ function App() {
       <Header/>
         <Routes>
      <Route path = "/Products" element = {<Products goods = {goods} createTocart = {createTocart}/>} /> 
-     <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} removeTocart = {removeTocart} cartClear = {cartClear} />} /> 
+     <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} check = {check } removeTocart = {removeTocart} cartClear = {cartClear} style = {style}  visible = {visible} inVisible = {inVisible} sum = {sum}/>} /> 
      </Routes>
      </Router>
     </div>

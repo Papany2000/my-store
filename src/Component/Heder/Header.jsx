@@ -13,6 +13,7 @@ return <div>
              <img src = {logo} alt = "foto"/>
          </div>
          <div className = {style.span}>
+         <span><Link to = "/">Главная</Link></span>
              <span><Link to = "/Products">Товары</Link></span>
              <span><Link to = "/Carts">Корзина</Link></span>
              <span>Контакты</span>
