@@ -40,8 +40,6 @@ function App() {
     let total = {price: cartGoods.reduce((total, el) => total  + el.price * el.count, 0)}
    setSum(sum.map(el => el.price = total ))
 }
-  
-  
 
   return (
     
@@ -49,7 +47,7 @@ function App() {
        <Router>
       <Header/>
         <Routes>
-        <Route path = "/adminPanel" element = {<CreateProductForm />} />   
+        <Route path = "/adminPanel" element = {<CreateProductForm goods = {goods} children = {'удалить с сервера'} refresh={setGoods} />} />   
      <Route path = "/Products" element = {<Products goods = {goods} createTocart = {createTocart}/>} /> 
      <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} check = {check } removeTocart = {removeTocart} cartClear = {cartClear} style = {style}  visible = {visible} inVisible = {inVisible} sum = {sum}/>} /> 
      </Routes>

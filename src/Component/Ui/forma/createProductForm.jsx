@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import style from './createProductForm.module.css'
 import { postProduct } from '../../../api/products';
-
+import ItemProduct from '../../ItemProduct/ItemProduct'
+import { removeProduct, getProducts} from '../../../api/products'
 
 const CreateProductForm = (props) => {
     const [name, setName] = useState('')
@@ -18,8 +19,18 @@ const CreateProductForm = (props) => {
         alert('Продукт добавлен в базу');
     }
 
+    const deleteProduct = async (e) =>{
+        await removeProduct(e.id)
+        const products = await getProducts()
+        props.refresh(products.data)
+    }
+
+    let productList = props.goods.map((elem, index) => <ItemProduct key = {index} id = {elem.id} name = {elem.name}  price = {elem.price} src = {elem.image}  children = {'удалить с сервера'} onClickFunc = {deleteProduct} />)
+   
     return (
+    <div>
         <div className={style.forma}>
+            <div className={style.formContainer}>
             <h3>Форма для сервера</h3>
             <forma action="#" encType="multipart/form-data" method="post">
                 <fieldset>
@@ -39,8 +50,12 @@ const CreateProductForm = (props) => {
                 </fieldset>
             </forma>
             <button className={style.form} type="submit" onClick={() => createNewProduct() } >Введите данные</button>
+            </div>
         </div>
-
+        <section>
+                     {productList}
+            </section>
+        </div>
     )
 }
 export default CreateProductForm

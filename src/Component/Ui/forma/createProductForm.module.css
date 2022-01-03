@@ -1,10 +1,24 @@
+
 h3{
     font-size: 24px;
+    text-align: center;
 }
-fieldset{
+.forma {
     background: lightblue;
     border: 2px solid teal;
 }
+fieldset{
+    width: 500px;
+    margin: 0 auto;
+    background: #add8e6;
+    border: 2px solid teal;
+}
+
+p {
+    width: 200px;
+    margin: 0 auto;
+}
+
 input{
     display: block;
     margin-right: 0px;
