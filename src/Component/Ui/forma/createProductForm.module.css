@@ -1,0 +1,17 @@
+h3{
+    font-size: 24px;
+}
+fieldset{
+    background: lightblue;
+    border: 2px solid teal;
+}
+input{
+    display: block;
+    margin-right: 0px;
+    width: 200px;
+}
+.form{
+    display: block;
+    margin-right: 20px;
+    background: lightgreen;
+}
