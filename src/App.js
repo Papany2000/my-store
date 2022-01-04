@@ -47,7 +47,7 @@ function App() {
        <Router>
       <Header/>
         <Routes>
-        <Route path = "/adminPanel" element = {<CreateProductForm goods = {goods} children = {'удалить с сервера'} refresh={setGoods} />} />   
+        <Route path = "/adminPanel" element = {<CreateProductForm goods = {goods} children = {'удалить с сервера'} setgoods={setGoods} />} />   
      <Route path = "/Products" element = {<Products goods = {goods} createTocart = {createTocart}/>} /> 
      <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} check = {check } removeTocart = {removeTocart} cartClear = {cartClear} style = {style}  visible = {visible} inVisible = {inVisible} sum = {sum}/>} /> 
      </Routes>

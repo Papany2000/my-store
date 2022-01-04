@@ -16,7 +16,9 @@ const CreateProductForm = (props) => {
 
     const createNewProduct = async () => {
         await postProduct({ name, price, image });
-        alert('Продукт добавлен в базу');
+        const products = await getProducts()
+        props.setgoods(products.data)
+       
     }
 
     const deleteProduct = async (e) =>{

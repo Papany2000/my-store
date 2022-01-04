@@ -1,1 +1,1 @@
-export const serverUrl = process.env.REACT_APP_API_URL || 'http://192.168.0.161:3001'
+export const serverUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001'
