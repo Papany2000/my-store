@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Heder.module.css'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import logo from './../../Images/logo.jpg'
 
 const Header = function(){
@@ -13,13 +13,13 @@ return <div>
              <img src = {logo} alt = "foto"/>
          </div>
          <div className = {style.span}>
-         <span><Link to = "/">Главная</Link></span>
-             <span><Link to = "/Products">Товары</Link></span>
-             <span><Link to = "/Carts">Корзина</Link></span>
+             <span><NavLink to = "/" >Главная</NavLink></span>
+             <span><NavLink to = "/Products">Товары</NavLink></span>
+             <span><NavLink to = "/Carts">Корзина</NavLink></span>
              <span>Контакты</span>
          </div> 
          </div>
-       </header>
+  </header>
 
 </div>
 }

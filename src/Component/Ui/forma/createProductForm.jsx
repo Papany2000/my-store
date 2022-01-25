@@ -3,6 +3,7 @@ import style from './createProductForm.module.css'
 import { postProduct } from '../../../api/products';
 import ItemProduct from '../../ItemProduct/ItemProduct'
 import { removeProduct, getProducts} from '../../../api/products'
+import Preloader from "../Preloader/Preloader";
 
 const CreateProductForm = (props) => {
     const [name, setName] = useState('')
@@ -18,17 +19,20 @@ const CreateProductForm = (props) => {
         await postProduct({ name, price, image });
         const products = await getProducts()
         props.setgoods(products.data)
-       
+        setName('')
     }
 
     const deleteProduct = async (e) =>{
         await removeProduct(e.id)
         const products = await getProducts()
         props.refresh(products.data)
+        
     }
 
     let productList = props.goods.map((elem, index) => <ItemProduct key = {index} id = {elem.id} name = {elem.name}  price = {elem.price} src = {elem.image}  children = {'удалить с сервера'} onClickFunc = {deleteProduct} />)
-   
+    if (!productList ){
+        return <Preloader/>
+    }
     return (
     <div>
         <div className={style.forma}>

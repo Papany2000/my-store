@@ -10,7 +10,7 @@ let newItem = {id: props.id, price: props.price, name: props.name, image: props.
 return ( <div className={style.itemProduct}>
                 
                     <div className = {style.foto}> 
-                     <img className = {style.img} src = {props.src} alt = 'foto'/>
+                    <img className = {style.img} src = {props.src} alt = 'foto'/>
                     </div>
                     <div className = {style.productItemInfo}>
                         <p>{props.name} </p>

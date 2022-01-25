@@ -7,8 +7,6 @@ import Itemproduct from '../ItemProduct/ItemProduct'
 
 const Carts = function(props){
 
-   console.log(props.sum[0].price)
-
     let cartItemElement = props.cartGoods.map((elem) =>  <Itemproduct key = {elem.id} isCount = {true} count = {elem.count}  id = {elem.id} name = {elem.name}  price = {elem.price} src = {elem.image}  onClickFunc = {props.removeTocart} children = {'удалить'} />)
     
 return <div>
