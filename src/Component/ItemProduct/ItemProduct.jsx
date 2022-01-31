@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../Ui/Button/Button'
 import style from './ItemProduct.module.css'
+import { NavLink } from 'react-router-dom'
 
 const Itemproduct = function(props){
 
@@ -10,7 +11,7 @@ let newItem = {id: props.id, price: props.price, name: props.name, image: props.
 return ( <div className={style.itemProduct}>
                 
                     <div className = {style.foto}> 
-                    <img className = {style.img} src = {props.src} alt = 'foto'/>
+                    <NavLink to = {'/Product/' +  props.id}> <img className = {style.img} src = {props.src} alt = 'foto'/></NavLink>
                     </div>
                     <div className = {style.productItemInfo}>
                         <p>{props.name} </p>

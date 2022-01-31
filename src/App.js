@@ -6,7 +6,8 @@ import Carts from './Component/Carts/Carts'
 import {Routes, Route } from 'react-router-dom';
 import { getProducts} from './api/products'
 import CreateProductForm from './Component/Ui/forma/createProductForm'
-
+import Product from './Component/Product/Product';
+import Main from './Component/Main/Main';
 
 function App() {
   const [goods, setGoods] = useState([]);
@@ -48,9 +49,10 @@ function App() {
       
      < Header/>
      <Routes>
+     <Route path = "/" element = {<Main />} />  
          <Route path = "/adminPanel" element = {<CreateProductForm goods = {goods} children = {'удалить с сервера'} setgoods={setGoods} />} />   
          <Route path = "/Products" element = {<Products goods = {goods} createTocart = {createTocart}/>} /> 
-         <Route path = "/Product/:id" element = {<Products goods = {goods} createTocart = {createTocart}/>} />
+         <Route path = "/Product/:id" element = {<Product createTocart = {createTocart}/>} />
          <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} check = {check } removeTocart = {removeTocart} cartClear = {cartClear} style = {style}  visible = {visible} inVisible = {inVisible} sum = {sum}/>} /> 
      </Routes>
     
