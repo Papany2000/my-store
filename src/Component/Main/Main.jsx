@@ -1,15 +1,22 @@
-import React from 'react'
-import Slider from '../Slide/Slider.jsx'
+import React, { useState } from 'react'
 import style from './Main.module.css'
-
+import Modal from '../Ui/modal/Modal'
+import Hookform from '../Ui/Hookformat/Hookform'
 
 const Main = function(){
 
+const [modalActive, setModalActive] = useState(false)
 
-return <div className= {style.main}>
+return (
+<div>
+    <main className={style.main}>
+        <button className={style.openBtn} onClick = {() => setModalActive(true)}>зарегистрируйтесь</button>
+      
+      
+    </main>
+    <Modal  active = {modalActive}  setActive = {setModalActive}><Hookform/></Modal>
+ </div>
  
- <h1>Ты помнишь как всё начиналось</h1>
-<Slider/>
-</div>
+    )
 }
 export default Main

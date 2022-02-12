@@ -9,6 +9,8 @@ import CreateProductForm from './Component/Ui/forma/createProductForm'
 import Product from './Component/Product/Product';
 import Main from './Component/Main/Main';
 
+
+
 function App() {
   const [goods, setGoods] = useState([]);
   useEffect(() => {
@@ -46,7 +48,7 @@ function App() {
   return (
     
     <div className="App">
-      
+     
      < Header/>
      <Routes>
      <Route path = "/" element = {<Main />} />  
@@ -55,7 +57,7 @@ function App() {
          <Route path = "/Product/:id" element = {<Product createTocart = {createTocart}/>} />
          <Route path = "/Carts" element = {<Carts cartGoods = {cartGoods} check = {check } removeTocart = {removeTocart} cartClear = {cartClear} style = {style}  visible = {visible} inVisible = {inVisible} sum = {sum}/>} /> 
      </Routes>
-    
+     
     </div>
    
    
