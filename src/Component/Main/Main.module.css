@@ -1,11 +1,9 @@
-*{
+main{
  padding: 0;
  margin: 0;
  box-sizing: border-box;
 }
-p{
-  margin: 20px;
-}
+
 .oppenBtn{
   margin: 10px 20px;
   padding: 10px;

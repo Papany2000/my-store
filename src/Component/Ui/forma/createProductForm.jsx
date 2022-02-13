@@ -38,7 +38,7 @@ const CreateProductForm = (props) => {
         <div className={style.forma}>
             <div className={style.formContainer}>
             <h3>Форма для сервера</h3>
-            <forma action="#" encType="multipart/form-data" method="post">
+            <forma className = {style.forma} action="#" encType="multipart/form-data" method="post">
                 <fieldset>
                     <legend>Информация</legend>
                     <p>

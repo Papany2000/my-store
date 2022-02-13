@@ -18,6 +18,7 @@ return <div>
                 <button className = {style.check} onMouseMove = {() => props.check()}>Оплатить покупки</button>
                 <button className = {style.zuruck} onClick = {() => props.inVisible() } >назад</button>
             </div>
+           
             <Button   onClick = {() => props.cartClear()} children={'очистить корзину'}/>
             <Button  onClick = {() => props.visible() } onMouseMove = {() => props.check()} children={'оформить покупку'}/>
             <section>

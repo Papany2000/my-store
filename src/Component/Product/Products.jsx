@@ -9,7 +9,7 @@ import { getProducts } from '../../api/products'
 
 const Products = function(props){
 
-  const pageSize = 4;
+  const pageSize = 6;
     const {
       nextPage,
       prevPage,
@@ -46,8 +46,8 @@ return <div>
             </section>
         </div> 
 
-        <div className="pagination">
-  <p className="text">
+        <div className={style.pagination}>
+  <p className= {style.text}>
     {page}/{totalPages}
   </p>
   <button onClick={() => prevPage() } className="page">
